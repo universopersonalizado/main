@@ -81,7 +81,7 @@ body {
             margin: 15px 0;
             padding: 10px 20px;
             color: #fff;
-            background-color: #8e24aa;
+            background-color: #eec9ff;
             border: none;
             border-radius: 8px;
             text-decoration: none;
@@ -90,7 +90,7 @@ body {
             transition: background-color 0.3s, transform 0.3s;
         }
         .buy-btn:hover {
-            background-color: #5e35b1;
+            background-color:#eec9ff;
             transform: scale(1.05);
         }
 
