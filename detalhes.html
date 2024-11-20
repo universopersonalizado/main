@@ -45,10 +45,9 @@
         document.getElementById('descricao').innerText = descricao;
         document.getElementById('preco').innerText = preco;
 
-	const titulo2 = params.get('titulo').replace(" ","%20"); // Pega o valor do parâmetro 'titulo'
-    	const link = `https://wa.me/5598989119005?text=Olá,%20tenho%20interesse%20em%20comprar%20a%20${titulo2}`;
-    	// Atribuir o link ao botão
-    	const botao = document.querySelector('.back-btn');
+	let titulo2 = titulo.replace(" ","%20"); // Pega o valor do parâmetro 'titulo'
+    	let link = `https://wa.me/5598989119005?text=Olá,%20tenho%20interesse%20em%20comprar%20a%20${titulo2}`;
+    	let botao = document.querySelector('.back-btn');
     	botao.href = link;
     </script>
 </body>
