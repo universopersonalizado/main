@@ -17,15 +17,17 @@
     </header>
 
     
-    <div class="container">
-        <img id="imagem" src="" alt="Imagem da Caneca">
-        <h2 id="titulo"></h2>
-        <p id="descricao"></p>
-        <p class="price" id="preco"></p>
-	    <script>
-		var link = "https://wa.me/5598989119005?text=Olá, tenho interesse em comprar a ${params.get('titulo')}"
-	    </script>
-        <a href=link target="_blank" class="back-btn">Comprar</a>
+    <p class="price" id="preco"></p>
+<script>
+    const params = new URLSearchParams(window.location.search); // Obtém parâmetros da URL
+    const titulo = params.get('titulo'); // Pega o valor do parâmetro 'titulo'
+    const link = `https://wa.me/5598989119005?text=Olá, tenho interesse em comprar a ${titulo}`;
+    
+    // Atribuir o link ao botão
+    const botao = document.querySelector('.back-btn');
+    botao.href = link;
+</script>
+<a href="#" target="_blank" class="back-btn">Comprar</a>
         <a href="index.html" class="back-btn">Voltar</a>
     </div>
 
