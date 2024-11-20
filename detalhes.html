@@ -40,8 +40,8 @@
 
         // Exibir dados na página
         const { imagem, titulo, descricao, preco } = getQueryParams();
-	let path = "img/"
-        document.getElementById('imagem').src = path.concat(imagem);
+	
+        document.getElementById('imagem').src = imagem;
         document.getElementById('imagem').alt = titulo;
         document.getElementById('titulo').innerText = titulo;
         document.getElementById('descricao').innerText = descricao;
