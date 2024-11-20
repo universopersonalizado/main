@@ -1,0 +1,145 @@
+body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f3e8ff, #d9c2f3);
+            color: #333;
+        }
+        header {
+            width: 100%;
+            background-color: #532477;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 180px auto 20px; /* Aumentado para compensar a altura do header */
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .item {
+            width: calc(33% - 20px);
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        .item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .item img {
+            width: 70%;
+            height: auto;
+            border-bottom: 4px solid #8e24aa;
+            transition: opacity 0.3s;
+        }
+        .item:hover img {
+            opacity: 0.9;
+        }
+        .item h3 {
+            margin: 10px 0;
+            color: #6a1b9a;
+            font-weight: 700;
+        }
+        .item p {
+            color: #666;
+            margin: 5px 0;
+        }
+        .price {
+            font-size: 1.3em;
+            color: #333;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .buy-btn {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #8e24aa;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .buy-btn:hover {
+            background-color: #5e35b1;
+            transform: scale(1.05);
+        }
+
+        @media(max-width: 768px) {
+            .container {
+                margin-top: 200px; /* Ajuste para telas menores */
+            }
+            .item {
+                width: calc(50% - 20px);
+            }
+        }
+        @media(max-width: 480px) {
+            .container {
+                margin-top: 220px; /* Ajuste para telas ainda menores */
+            }
+            .item {
+                width: 100%;
+            }
+        }
+	.container {
+            max-width: 900px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 180px; /* Espaço para o header */
+        }
+        .container img {
+            width: 100%;
+            border-radius: 12px;
+        }
+        .container h2 {
+            color: #6a1b9a;
+        }
+        .price {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #8e24aa;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }

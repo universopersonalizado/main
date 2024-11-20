@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Personalizado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+        
+  
+</head>
+<body>
+    <header>
+               <img src="logo.png" alt="Logo Universo Personalizado" class="logo" style="max-width:160px;">
+    </header>
+
+    
+    <div class="container">
+        <img id="imagem" src="" alt="Imagem da Caneca">
+        <h2 id="titulo"></h2>
+        <p id="descricao"></p>
+        <p class="price" id="preco"></p>
+        <a href="https://wa.me/5598987889645" target="_blank" class="back-btn">Comprar</a>
+        <a href="index.html" class="back-btn">Voltar</a>
+    </div>
+
+    <script>
+        // Função para obter parâmetros da URL
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                imagem: params.get('imagem'),
+                titulo: params.get('titulo'),
+                descricao: params.get('descricao'),
+                preco: params.get('preco')
+            };
+        }
+
+        // Exibir dados na página
+        const { imagem, titulo, descricao, preco } = getQueryParams();
+	let path = "img/"
+        document.getElementById('imagem').src = path.concat(imagem);
+        document.getElementById('imagem').alt = titulo;
+        document.getElementById('titulo').innerText = titulo;
+        document.getElementById('descricao').innerText = descricao;
+        document.getElementById('preco').innerText = preco;
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Personalizado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+        
+  
+</head>
+<body>
+    <header>
+               <img src="logo.png" alt="Logo Universo Personalizado" class="logo" style="max-width:160px;">
+    </header>
+
+    <div class="container">
+        <div class="grid" id="canecasContainer"></div>
+    </div>
+
+      <script>
+        const canecasData = [
+            {
+                "imagem": "flamengo.png",
+                "titulo": "Caneca de Time",
+                "descricao": "Ideal para os amantes de futebol.",
+                "preco": "R$ 25,00"
+            },
+            {
+                "imagem": "anime.png",
+                "titulo": "Caneca de Anime",
+                "descricao": "Para os apaixonados por animes e mangás.",
+                "preco": "R$ 25,00"
+            },
+            {
+                "imagem": "dorama.png",
+                "titulo": "Caneca Dorama com Alça de Coração",
+                "descricao": "Para os grandes fãs da cultura Coreana.",
+                "preco": "R$ 35,00"
+            },
+             {
+                "imagem": "banda.png",
+                "titulo": "Canecas de Bandas",
+                "descricao": "Demonstre o carinho por sua banda preferida com uma bela caneca.",
+                "preco": "R$ 25,00"
+            },
+  {
+                "imagem": "serie.png",
+                "titulo": "Canecas de séries",
+                "descricao": "As melhores canecas homenageando as melhores séries.",
+                "preco": "R$ 25,00"
+            }
+        ];
+
+        function renderizarCanecas(canecas) {
+            const container = document.getElementById('canecasContainer');
+            canecas.forEach((caneca, index) => {
+                const item = document.createElement('div');
+                item.classList.add('item');
+                item.innerHTML = `
+                    <img src="img/${caneca.imagem}" alt="${caneca.titulo}">
+                    <h3>${caneca.titulo}</h3>
+                    <p>${caneca.descricao}</p>
+                    <p class="price">${caneca.preco}</p>
+                    <a href="detalhes.html?imagem=${encodeURIComponent(caneca.imagem)}&titulo=${encodeURIComponent(caneca.titulo)}&descricao=${encodeURIComponent(caneca.descricao)}&preco=${encodeURIComponent(caneca.preco)}" class="buy-btn">Detalhes</a>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        renderizarCanecas(canecasData);
+    </script>
+</body>
+</html>
