@@ -21,14 +21,7 @@
 
 	<a href="#" target="_blank" class="back-btn">Comprar</a>
         <a href="index.html" class="back-btn">Voltar</a>
-	<script>
-    	const params = new URLSearchParams(window.location.search); // Obtém parâmetros da URL
-	const titulo2 = params.get('titulo').replace(" ","%20"); // Pega o valor do parâmetro 'titulo'
-    	const link = `https://wa.me/5598989119005?text=Olá,%20tenho%20interesse%20em%20comprar%20a%20${titulo2}`;
-    	// Atribuir o link ao botão
-    	const botao = document.querySelector('.back-btn');
-    	botao.href = link;
-</script>
+	
     </div>
 
     <script>
@@ -51,6 +44,12 @@
         document.getElementById('titulo').innerText = titulo;
         document.getElementById('descricao').innerText = descricao;
         document.getElementById('preco').innerText = preco;
+
+	const titulo2 = params.get('titulo').replace(" ","%20"); // Pega o valor do parâmetro 'titulo'
+    	const link = `https://wa.me/5598989119005?text=Olá,%20tenho%20interesse%20em%20comprar%20a%20${titulo2}`;
+    	// Atribuir o link ao botão
+    	const botao = document.querySelector('.back-btn');
+    	botao.href = link;
     </script>
 </body>
 </html>
