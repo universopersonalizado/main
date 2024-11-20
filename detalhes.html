@@ -8,21 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-        
-  
 </head>
 <body>
     <header>
-               <img src="logo.png" alt="Logo Universo Personalizado" class="logo" style="max-width:160px;">
+        <img src="logo.png" alt="Logo Universo Personalizado" class="logo" style="max-width:160px;">
     </header>
 
-    
+    <!-- Elementos que precisam ser manipulados no JavaScript -->
+    <img id="imagem" src="" alt="Imagem do produto" style="max-width: 100%; margin-bottom: 20px;">
+    <h1 id="titulo"></h1>
+    <p id="descricao"></p>
     <p class="price" id="preco"></p>
 
-	<a href="#" target="_blank" class="buy-btn">Comprar</a>
-        <a href="index.html" class="back-btn">Voltar</a>
-	
-    </div>
+    <a href="#" target="_blank" class="buy-btn">Comprar</a>
+    <a href="index.html" class="back-btn">Voltar</a>
 
     <script>
         // Função para obter parâmetros da URL
@@ -38,17 +37,32 @@
 
         // Exibir dados na página
         const { imagem, titulo, descricao, preco } = getQueryParams();
-	
-        document.getElementById('imagem').src = imagem;
-        document.getElementById('imagem').alt = titulo;
-        document.getElementById('titulo').innerText = titulo;
-        document.getElementById('descricao').innerText = descricao;
-        document.getElementById('preco').innerText = preco;
 
-	let titulo2 = titulo.replace(" ","%20"); // Pega o valor do parâmetro 'titulo'
-    	let link = `https://wa.me/5598989119005?text=Olá,%20tenho%20interesse%20em%20comprar%20a%20${titulo2}`;
-    	let botao = document.querySelector('.buy-btn');
-    	botao.href = link;
+        // Atualizar os elementos com os valores dos parâmetros
+        const imgElement = document.getElementById('imagem');
+        const tituloElement = document.getElementById('titulo');
+        const descricaoElement = document.getElementById('descricao');
+        const precoElement = document.getElementById('preco');
+
+        if (imgElement) {
+            imgElement.src = imagem || 'placeholder.png'; // Imagem padrão caso não venha nada
+            imgElement.alt = titulo || 'Produto sem título';
+        }
+        if (tituloElement) {
+            tituloElement.innerText = titulo || 'Título não informado';
+        }
+        if (descricaoElement) {
+            descricaoElement.innerText = descricao || 'Descrição não disponível.';
+        }
+        if (precoElement) {
+            precoElement.innerText = preco || 'Preço indisponível.';
+        }
+
+        // Atualizar link do botão de compra
+        let tituloEncoded = encodeURIComponent(titulo || 'Produto');
+        let link = `https://wa.me/5598989119005?text=Olá,%20tenho%20interesse%20em%20comprar%20a%20${tituloEncoded}`;
+        let botao = document.querySelector('.buy-btn');
+        botao.href = link;
     </script>
 </body>
 </html>
