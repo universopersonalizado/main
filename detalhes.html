@@ -22,7 +22,10 @@
         <h2 id="titulo"></h2>
         <p id="descricao"></p>
         <p class="price" id="preco"></p>
-        <a href="https://wa.me/5598987889645" target="_blank" class="back-btn">Comprar</a>
+	    <script>
+		var link = "https://wa.me/5598989119005?text=Olá, tenho interesse em comprar a ${params.get('titulo')}"
+	    </script>
+        <a href=link target="_blank" class="back-btn">Comprar</a>
         <a href="index.html" class="back-btn">Voltar</a>
     </div>
 
